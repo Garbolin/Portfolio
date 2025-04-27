@@ -1,0 +1,6 @@
+{
+    // Remove the SVG Viewer association to open SVG files in the default text editor
+    "workbench.editorAssociations": {
+        "*.svg": "default"
+    }
+}
