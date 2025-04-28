@@ -31,7 +31,7 @@ const followCursor = (el, xrel, yrel) => {
 const follow =() => {
     eyes.forEach(eye => followCursor(eye, 4, 4));
     yellowEyes.forEach(yellowEye => followCursor(yellowEye, 10, 10));
-    catBody.followCursor(catBody, 1, 1);
+    // catBody.followCursor(catBody, 1, 1);
 }
 
 window.addEventListener('resize', windowSize);
