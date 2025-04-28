@@ -375,7 +375,8 @@ html {
 }
 
 li::marker {
-    list-style: none;
+    list-style: circle;
+    mask-size: 10px;
 }
 
 
