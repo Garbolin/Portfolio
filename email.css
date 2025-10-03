@@ -1,0 +1,9 @@
+.error-email {
+    color: var(--error-email);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: 700;
+    font-size: 0.7rem;
+}
