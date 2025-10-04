@@ -4,17 +4,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputEmail = document.querySelector("#email");
     const inputSubject = document.querySelector("#subject");
     const inputMessage = document.querySelector("#message");
+    const submit = document.querySelector("#submit");
 
-    inputName.addEventListener("blur", validate)
-    inputEmail.addEventListener("blur", validate)
-    inputSubject.addEventListener("blur", validate)
-    inputMessage.addEventListener("blur", validate)
+    inputName.addEventListener("blur", validate);
+    inputEmail.addEventListener("blur", validate);
+    inputSubject.addEventListener("blur", validate);
+    inputMessage.addEventListener("blur", validate);
 
+    submit.addEventListener("click", (e) => {
+        e.preventDefault()
+        console.log("Enviando email...");
+    })
 
     function validate(e) {
         if (e.target.value.trim() === ""){
             //Comprobar si ya hay alerta
-            removeAlert( e.target.parentElement )
+            removeAlert( e.target.parentElement );
             showAlert(`* hay que poner un contenido en el ${e.target.parentElement.querySelector("label").textContent}`, e.target.parentElement);
             return;
         }
@@ -29,9 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         //han pasado la prueba
         removeAlert(e.target.parentElement)
-        
-
-
     }
 
     function showAlert( message, reference ) {
@@ -56,8 +58,5 @@ document.addEventListener("DOMContentLoaded", () => {
             reference.removeChild(error);
         }
     }
-
-    //si hay algun string vacío no se puede enviar
-
 
 })

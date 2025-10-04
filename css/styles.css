@@ -629,20 +629,35 @@ li::marker {
 }
 
 .textarea {
-    width: calc(100% - 21px);;
+    width: calc(100% - 21px);
 }
 
 .form-label {
     font-family:"Fredoka", sans-serif;
     font-weight: 500;
 }
+
+.form-loader-submit-container {
+    display: flex;
+    flex-direction: row;      
+    align-items: center;      
+    gap: 50%;                
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.form-loader-container {
+    display: flex;
+    justify-content: center;
+    
+}
+
 .submit {
     align-self: end;
     padding: 5px 50px;
     margin: 0;
     border: none;
 }
-
 /*---------------FOOTER------------------*/
 
 .nav-footer {
