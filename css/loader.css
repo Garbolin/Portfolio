@@ -4,7 +4,7 @@
     border-radius: 50%;
     /* display: block; */
     display: hidden;
-    margin:15px auto;
+    margin:10px auto;
     position: relative;
     color: #FFF;
     left: -100px;
@@ -13,7 +13,7 @@
 }
 
 .hidden-loader {
-    visibility: hidden;
+    display: none;
 }
 
 @keyframes shadowRolling {

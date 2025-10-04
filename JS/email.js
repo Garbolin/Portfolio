@@ -94,18 +94,51 @@ document.addEventListener("DOMContentLoaded", () => {
     async function sendEmail() {
         try {
         loader.classList.remove("hidden-loader"); // mostramos loader antes de enviar
-
+        console.log(btnSubmit.parentElement);
         const response = await emailjs.send(
             "service_uk15g8a",
             "template_19qjilk",
             email
         );
+        // hello()
+        sendedEmailAlert( "Email sended Succesfully! :)", true)
+        setTimeout(() => {
+            btnSubmit.parentElement.querySelector("div p")?.parentElement.remove();
+        }, 3000);
+        
     } catch (error) {
         console.log('FAILED...', error);
+        sendedEmailAlert( "Try again, an error ocurred trying to send the email! :(", false)
+        setTimeout(() => {
+            btnSubmit.parentElement.querySelector("div p")?.parentElement.remove();
+            console.log(btnSubmit.parentElement);
+        }, 3000);
+
     } finally {
         loader.classList.add("hidden-loader"); // siempre se oculta el loader al terminar
     }
     }
 
+    function sendedEmailAlert( message, type) {
+        const toastContainer = document.createElement("div");
+        const toast = document.createElement("p");
+        const reference = btnSubmit.parentElement;
+
+        toast.textContent = message;
+        
+        toastContainer.classList.add("send-email-alert");
+        toastContainer.appendChild(toast);
+
+        console.log(toastContainer);
+        
+        reference.appendChild(toastContainer);
+
+        if (type === false) {
+            toastContainer.classList.add("error-bg-color");
+        } else {
+            toastContainer.classList.add("success-bg-color");
+        }
+        
+    }
 
 })
