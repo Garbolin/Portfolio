@@ -364,9 +364,9 @@
                 </div>
                 <div class="form-loader-submit-container">
                     <div class="form-loader-container">
-                        <span class="loader"></span>
+                        <span id="loader" class="loader hidden-loader"></span>
                     </div>
-                    <input id="submit" class="btn submit btn-hover" type="submit" value="Enviar">
+                    <input id="submit" class="btn submit btn-hover" type="submit" value="Enviar" >
                 </div>
             </form>
         </section>
@@ -422,5 +422,7 @@
     <script type="text/javascript" src="JS/cateyes.js" defer></script>
     <script type="text/javascript" src="JS/colorchange.js" defer></script>
     <script type="text/javascript" src="JS/email.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"> </script> 
+    <script type="text/javascript"> (function(){ emailjs.init({ publicKey: "fhQmImEIcca1vRBQj", }); })(); </script>
 </body>
 </html>
