@@ -12,7 +12,7 @@
     --white: #ffffff;
     --black: #000000;
     --btn-hover: #ffffff;
-    --error-email: #e95757;
+    --error-email: #f27272;
 }
 
 /* WHITE LIGHTMODE 
@@ -35,9 +35,9 @@
 .lightmode{
     --primary-color:#FFF6E8; 
     --secondary-color: #EBDDC7; 
-    --btn-color: #886225; 
+    --btn-color: #835b04; 
     --headers-text-color: #000000; 
-    --text-color: #886225;  
+    --text-color: #835b04;  
     --btn-text-color: #ffffff; 
     --shadow: rgba(136, 98, 37, 0.25);
     --linkedin-color: #2965F1;
@@ -46,6 +46,7 @@
     --white: #ffffff;
     --black: #000000;
     --btn-hover: #996106;
+    --error-email: #c90000;
 }
 
 body {

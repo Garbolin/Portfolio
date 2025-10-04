@@ -14,23 +14,28 @@ document.addEventListener("DOMContentLoaded", () => {
     function validate(e) {
         if (e.target.value.trim() === ""){
             //Comprobar si ya hay alerta
-            alreadyAlert( e.target.parentElement )
+            removeAlert( e.target.parentElement )
             showAlert(`* hay que poner un contenido en el ${e.target.parentElement.querySelector("label").textContent}`, e.target.parentElement);
             return;
         }
+
         if (e.target.id === "email" && e.target.value.trim() !== "") {
+            //Validar email
             if (!validateEmail(e.target.value.trim())){
                 showAlert(`* Creo que el email no está bien construido :P`, e.target.parentElement);
                 return;
             }
         }
+
+        //han pasado la prueba
+        removeAlert(e.target.parentElement)
         
 
 
     }
 
     function showAlert( message, reference ) {
-        console.log(message);
+        removeAlert( reference )
         const error = document.createElement("P");
         error.textContent = message;
         error.classList.add("error-email");
@@ -40,15 +45,19 @@ document.addEventListener("DOMContentLoaded", () => {
     function validateEmail(email) {
         const regex =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/ ;
         const result = regex.test(email);
-        console.log(result);
         return result;
     }
 
-    //Comprobar si ya hay alerta
-    function alreadyAlert( reference ) {
-        if(reference.lastElementChild?.classList.contains("error-email")) {
-            console.log("tiene error")
+    //Comprobar si ya hay alerta, si hay se borra
+    function removeAlert(reference) {
+        console.log(reference)
+        if(reference.lastElementChild?.classList.contains("error-email")){
+            const error = reference.lastElementChild;
+            reference.removeChild(error);
         }
     }
+
+    //si hay algun string vacío no se puede enviar
+
 
 })
